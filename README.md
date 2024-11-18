@@ -18,11 +18,6 @@ composer require esign/laravel-scout-multi-word-database-engine
 
 The package will automatically register a service provider.
 
-Next up, you can publish the configuration file:
-```bash
-php artisan vendor:publish --provider="Esign\ScoutMultiWordDatabaseEngine\ScoutMultiWordDatabaseEngineServiceProvider" --tag="config"
-```
-
 ## Usage
 To use the multi-word database engine as a default, you may configure the `SCOUT_DRIVER` environment variable in your `.env` file to `multi-word-database`.
 
