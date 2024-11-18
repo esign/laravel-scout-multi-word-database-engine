@@ -32,4 +32,4 @@ abstract class TestCase extends BaseTestCase
             $table->string('title');
         });
     }
-} 
+}
