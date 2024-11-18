@@ -16,13 +16,14 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^8.3",
+        "illuminate/support": "^11.0",
+        "laravel/scout": "^10.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -45,10 +46,7 @@
         "laravel": {
             "providers": [
                 "Esign\\ScoutMultiWordDatabaseEngine\\ScoutMultiWordDatabaseEngineServiceProvider"
-            ],
-            "aliases": {
-                "ScoutMultiWordDatabaseEngine": "Esign\\ScoutMultiWordDatabaseEngine\\Facades\\ScoutMultiWordDatabaseEngineFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

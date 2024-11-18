@@ -3,6 +3,7 @@
 namespace Esign\ScoutMultiWordDatabaseEngine;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Scout\EngineManager;
 
 class ScoutMultiWordDatabaseEngineServiceProvider extends ServiceProvider
 {
@@ -11,15 +12,15 @@ class ScoutMultiWordDatabaseEngineServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([$this->configPath() => config_path('scout-multi-word-database-engine.php')], 'config');
         }
+
+        $this->app->make(EngineManager::class)->extend('multi-word-database', function () {
+            return new ScoutMultiWordDatabaseEngine();
+        });
     }
 
     public function register()
     {
         $this->mergeConfigFrom($this->configPath(), 'scout-multi-word-database-engine');
-
-        $this->app->singleton('scout-multi-word-database-engine', function () {
-            return new ScoutMultiWordDatabaseEngine;
-        });
     }
 
     protected function configPath(): string
